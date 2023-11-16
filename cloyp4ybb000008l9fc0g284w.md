@@ -5,7 +5,7 @@ seoDescription: "Step-by-step guide to creating a CI/CD pipeline for a Java appl
 datePublished: Tue Nov 14 2023 18:58:13 GMT+0000 (Coordinated Universal Time)
 cuid: cloyp4ybb000008l9fc0g284w
 slug: navigating-the-devops-landscape-building-a-java-cicd-pipeline
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1700117839195/0d517e9c-02c5-4a78-bb97-3080bc178879.png
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1700117896828/ab119dfc-439a-43fa-bf3b-9d47fa99c7c1.png
 ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1699988127218/757ab7cb-6f5c-4230-b88a-d36529e39258.png
 tags: ansible, kubernetes, maven, jenkins, ci-cd
 
