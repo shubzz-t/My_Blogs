@@ -120,4 +120,4 @@ We'll cover two methods for integrating Jenkins with GitHub. The first method in
     * Polling is set up to run at fixed intervals and runs whether there is a new event or not whereas webhooks are also automatically triggered when an event occurs.
         
 
-In summary, integrating Jenkins with GitHub streamlines CI/CD workflows. Whether you opt for GitHub hook trigger or poll SCM, these methods ensure seamless pipeline triggering on code commits. Mastering these integrations enhances collaboration and accelerates deployment.So, go ahead, experiment, and witness the power of Jenkins-GitHub integration in action! Happy coding!
+In summary, integrating Jenkins with GitHub streamlines CI/CD workflows. Whether you opt for GitHub hook trigger or poll SCM, these methods ensure seamless pipeline triggering on code commits. Mastering these integrations enhances collaboration and accelerates deployment. So, go ahead, experiment, and witness the power of Jenkins-GitHub integration in action! Happy coding!
