@@ -205,7 +205,6 @@ We will create an RDS MySQL instance configured as the primary database with a s
     9. Once logged in as the appuser run the below sql scripts:
         
         ```sql
-        -- Create Tables
         CREATE TABLE `author` ( 
           `id` int NOT NULL AUTO_INCREMENT, 
           `name` varchar(255) NOT NULL, 
