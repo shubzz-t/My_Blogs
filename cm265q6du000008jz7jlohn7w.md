@@ -562,7 +562,7 @@ We will now monitor the application using CloudWatch by collecting logs from the
     * Edit the configuration and select the latest version of the launch template to ensure that the updated version is used for instance launches.
         
 
-### 8\. Cloudfront and Route 53:
+### 9\. Cloudfront and Route 53:
 
 * Cloudfront:
     
