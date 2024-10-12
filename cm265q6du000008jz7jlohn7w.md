@@ -516,11 +516,6 @@ We will create an RDS MySQL instance configured as the primary database with a s
     2. Add necessary commands for configuring the presentation layer (e.g. installing NGINX, pulling the React app).
         
         ```bash
-        
-        
-        
-        
-        ssssss
         #!/bin/bash
         # Update package list and install required packages
         sudo yum update -y
@@ -575,70 +570,6 @@ We will create an RDS MySQL instance configured as the primary database with a s
         
         # Backup existing NGINX configuration
         sudo cp $NGINX_CONF ${NGINX_CONF}.bak
-        
-        # Write new NGINX configuration
-        sudo tee $NGINX_CONF > /dev/null <<EOL
-        user nginx;
-        worker_processes auto;
-        
-        error_log /var/log/nginx/error.log warn;
-        pid /run/nginx.pid;
-        
-        events {
-            worker_connections 1024;
-        }
-        
-        http {
-            include /etc/nginx/mime.types;
-            default_type application/octet-stream;
-        
-            log_format main '\$remote_addr - \$remote_user [\$time_local] "\$request" '
-                            '\$status \$body_bytes_sent "\$http_referer" '
-                            '"\$http_user_agent" "\$http_x_forwarded_for"';
-        
-            access_log /var/log/nginx/access.log main;
-        
-            sendfile on;
-            tcp_nopush on;
-            tcp_nodelay on;
-            keepalive_timeout 65;
-            types_hash_max_size 2048;
-        
-            include /etc/nginx/conf.d/*.conf;
-        }
-        EOL
-        
-        # Create a separate NGINX configuration file
-        sudo tee /etc/nginx/conf.d/presentation-tier.conf > /dev/null <<EOL
-        server {
-            listen 80;
-            server_name $SERVER_NAME;
-            root /usr/share/nginx/html/dist;
-            index index.html index.htm;
-        
-            #health check
-            location /health {
-                default_type text/html;
-                return 200 "<!DOCTYPE html><p>Health check endpoint</p>\n";
-            }
-        
-            location / {
-                try_files \$uri /index.html;
-            }
-        
-            location /api/ {
-                proxy_pass $APP_TIER_ALB_URL;
-                proxy_set_header Host \$host;
-                proxy_set_header X-Real-IP \$remote_addr;
-                proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
-                proxy_set_header X-Forwarded-Proto \$scheme;
-            }
-        }
-        EOL
-        
-        
-        # Restart NGINX to apply the new configuration
-        sudo systemctl restart nginx
         ```
         
     3. Save changes and create a new version of the launch template.
