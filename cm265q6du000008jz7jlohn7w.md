@@ -227,7 +227,7 @@ We will create an RDS MySQL instance configured as the primary database with a s
           PRIMARY KEY (`id`), 
           KEY `FK_66a4f0f47943a0d99c16ecf90b2` (`authorId`), 
           CONSTRAINT `FK_66a4f0f47943a0d99c16ecf90b2` FOREIGN KEY (`authorId`) REFERENCES `author` (`id`) 
-        ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci; 
+        ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
         ```
         
 
@@ -513,7 +513,7 @@ We will create an RDS MySQL instance configured as the primary database with a s
     
     1. Edit the user data section in the existing launch template.
         
-    2. Add necessary commands for configuring the presentation layer (e.g., installing NGINX, pulling the React app).
+    2. Add necessary commands for configuring the presentation layer (e.g. installing NGINX, pulling the React app).
         
         ```bash
         #!/bin/bash
