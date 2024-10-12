@@ -516,6 +516,11 @@ We will create an RDS MySQL instance configured as the primary database with a s
     2. Add necessary commands for configuring the presentation layer (e.g. installing NGINX, pulling the React app).
         
         ```bash
+        
+        
+        
+        
+        ssssss
         #!/bin/bash
         # Update package list and install required packages
         sudo yum update -y
