@@ -572,21 +572,6 @@ We will create an RDS MySQL instance configured as the primary database with a s
         sudo cp $NGINX_CONF ${NGINX_CONF}.bak
         
         
-            location / {
-                try_files \$uri /index.html;
-            }
-        
-            location /api/ {
-                proxy_pass $APP_TIER_ALB_URL;
-                proxy_set_header Host \$host;
-                proxy_set_header X-Real-IP \$remote_addr;
-                proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
-                proxy_set_header X-Forwarded-Proto \$scheme;
-            }
-        }
-        EOL
-        
-        
         # Restart NGINX to apply the new configuration
         sudo systemctl restart nginx
         ```
