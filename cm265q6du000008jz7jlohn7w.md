@@ -514,68 +514,7 @@ We will create an RDS MySQL instance configured as the primary database with a s
 
 1. Edit the user data section in the existing launch template.
     
-2. Add necessary commands for configuring the presentation layer (e.g. installing NGINX, pulling the React app).
-    
-    ```bash
-    #!/bin/bash
-    # Update package list and install required packages
-    sudo yum update -y
-    sudo yum install -y git
-    
-    # Install Node.js (use NodeSource for the latest version)
-    curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
-    sudo yum install -y nodejs
-    
-    # Install NGINX
-    sudo yum install -y nginx
-    
-    # Start and enable NGINX
-    sudo systemctl start nginx
-    sudo systemctl enable nginx
-    
-    # Define variables
-    REPO_URL="https://github.com/learnItRightWay01/react-node-mysql-app.git"
-    BRANCH_NAME="feature/add-logging"
-    REPO_DIR="/home/ec2-user/react-node-mysql-app/frontend"
-    ENV_FILE="$REPO_DIR/.env"
-    APP_TIER_ALB_URL="http://<internal-application-tier-alb-end-point.region.elb.amazonaws.com>"  # Replace with your actual alb endpoint
-    API_URL="/api"
-    
-    # Clone the repository as ec2-user
-    cd /home/ec2-user
-    sudo -u ec2-user git clone $REPO_URL
-    cd react-node-mysql-app
-    
-    # Checkout to the specific branch
-    sudo -u ec2-user git checkout $BRANCH_NAME
-    cd frontend
-    
-    # Ensure ec2-user owns the directory
-    sudo chown -R ec2-user:ec2-user /home/ec2-user/react-node-mysql-app
-    
-    # Create .env file with the API_URL
-    echo "VITE_API_URL=\"$API_URL\"" >> "$ENV_FILE"
-    
-    # Install Node.js dependencies as ec2-user
-    sudo -u ec2-user npm install
-    
-    # Build the frontend application as ec2-user
-    sudo -u ec2-user npm run build
-    
-    # Copy the build files to the NGINX directory
-    sudo cp -r dist /usr/share/nginx/html/
-    
-    # Update NGINX configuration
-    NGINX_CONF="/etc/nginx/nginx.conf"
-    SERVER_NAME="<domain subdomain>"  # Replace with your actual domain name
-    
-    # Backup existing NGINX configuration
-    sudo cp $NGINX_CONF ${NGINX_CONF}.bak
-    
-    
-    # Restart NGINX to apply the new configuration
-    sudo systemctl restart nginx
-    ```
+2. Add necessary commands for configuring the presentation layer (e.g. installing NGINX, pulling the React app). Replace user data with content in file [https://github.com/shubzz-t/AWS-THREE-TIER-APP/blob/main/config.txt](https://github.com/shubzz-t/AWS-THREE-TIER-APP/blob/main/config.txt)
     
 3. Save changes and create a new version of the launch template.
     
