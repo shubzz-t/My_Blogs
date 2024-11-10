@@ -227,6 +227,8 @@ In this section, we will walk through the process of backing up and restoring th
             --secret-file ./credentials-velero
         ```
         
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1731232483438/566e459b-7be4-49cc-8729-7bf5ff0ba03b.png align="center")
+        
         * `--provider aws`: Specifies that you are using AWS as your cloud provider.
             
         * `--plugins velero/velero-plugin-for-aws:v1.3.0`: The AWS plugin Velero will use.
@@ -244,6 +246,8 @@ In this section, we will walk through the process of backing up and restoring th
         ```plaintext
         kubectl get pods -n velero
         ```
+        
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1731232498335/b4f95b12-2b25-499e-aef4-a8c7ed4375e1.png align="center")
         
 * **Step 4: Creating a Kubernetes Application**
     
@@ -277,6 +281,8 @@ In this section, we will walk through the process of backing up and restoring th
         velero backup-location get
         ```
         
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1731232532782/51b47e70-1e69-4dac-8cbe-4a828444e796.png align="center")
+        
         This will show the configured backup location (in this case, your S3 bucket).
         
     2. **Create a Backup**: Run the following command to create a backup of your cluster:
@@ -285,6 +291,8 @@ In this section, we will walk through the process of backing up and restoring th
         velero backup create cluster-backup
         ```
         
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1731232563220/66bfbef8-dbc2-4ae9-a44e-e1ca1604f3a6.png align="center")
+        
         Velero will now take a backup of the cluster, including Kubernetes resources (deployments, services, etc.) and persistent volumes.
         
         You can check the backup status using:
@@ -292,6 +300,8 @@ In this section, we will walk through the process of backing up and restoring th
         ```plaintext
         velero backup get
         ```
+        
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1731232579233/f04aabab-c727-4171-847a-b95b22560e8f.png align="center")
         
 * **Step 6: Restore the Backup**
     
@@ -303,6 +313,8 @@ In this section, we will walk through the process of backing up and restoring th
         velero restore create new-backup-restore --from-backup cluster-backup
         ```
         
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1731232599104/65cb2028-3648-4241-bdd4-043e13709d9b.png align="center")
+        
         This will initiate the restoration of all resources that were backed up in the `cluster-backup` backup.
         
     2. **Check the Restore Status**: You can monitor the restore process:
@@ -310,6 +322,8 @@ In this section, we will walk through the process of backing up and restoring th
         ```plaintext
         velero restore get
         ```
+        
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1731232621356/03f1ccd3-4ff5-41ef-ac34-06b52a7308c2.png align="center")
         
 * **Step 7: Verify the Restore**
     
