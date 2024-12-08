@@ -1,8 +1,8 @@
 ---
-title: "How to Grant AWS Users Access to an EKS Cluster: A Step-by-Step Guid"
+title: "How to Grant AWS Users Access to an EKS Cluster: A Step-by-Step Guide"
 datePublished: Sat Nov 23 2024 10:00:24 GMT+0000 (Coordinated Universal Time)
 cuid: cm3u01rp900040akz99rq5myl
-slug: how-to-grant-aws-users-access-to-an-eks-cluster-a-step-by-step-guid
+slug: how-to-grant-aws-users-access-to-an-eks-cluster-a-step-by-step-guide
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1732355665605/d52940aa-7508-409a-9c48-afecdc695267.gif
 ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1732355967379/c6aae9c7-7cb4-4867-8fa7-e5182167a1db.gif
 tags: authentication, aws, kubernetes, iam
